@@ -1,0 +1,71 @@
+@prefix : <http://my.domain/Alquiler#> .
+@prefix ns: <http://my.domain/Alquiler#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns: a owl:Ontology .
+
+ns:Viviendas_en_Alquiler a owl:Class .
+ns:Barrio a owl:Class .
+
+ns:Año a owl:DatatypeProperty ;
+    rdfs:label "Año" ;
+    rdfs:domain ns:Viviendas_en_Alquiler ;
+    rdfs:range xsd:integer .
+
+ns:Trimestre a owl:DatatypeProperty ;
+    rdfs:label "Trimestre" ;
+    rdfs:domain ns:Viviendas_en_Alquiler ;
+    rdfs:range xsd:integer .
+
+ns:barrio a owl:DatatypeProperty ;
+    rdfs:label "Nombre del Barrio" ;
+    rdfs:domain ns:Viviendas_en_Alquiler ;
+    rdfs:range xsd:string .
+
+ns:Nº_Viviendas a owl:DatatypeProperty ;
+    rdfs:label "Número de Viviendas" ;
+    rdfs:domain ns:Viviendas_en_Alquiler ;
+    rdfs:range xsd:integer .
+
+ns:m2 a owl:DatatypeProperty ;
+    rdfs:label "Metros Cuadrados" ;
+    rdfs:domain ns:Viviendas_en_Alquiler ;
+    rdfs:range xsd:float .
+
+ns:Dormitorios a owl:DatatypeProperty ;
+    rdfs:label "Dormitorios" ;
+    rdfs:domain ns:Viviendas_en_Alquiler ;
+    rdfs:range xsd:float .
+
+ns:Baños a owl:DatatypeProperty ;
+    rdfs:label "Baños" ;
+    rdfs:domain ns:Viviendas_en_Alquiler ;
+    rdfs:range xsd:float .
+
+ns:Renta_min a owl:DatatypeProperty ;
+    rdfs:label "Renta Mínima" ;
+    rdfs:domain ns:Viviendas_en_Alquiler ;
+    rdfs:range xsd:integer .
+
+ns:Renta_med a owl:DatatypeProperty ;
+    rdfs:label "Renta Media" ;
+    rdfs:domain ns:Viviendas_en_Alquiler ;
+    rdfs:range xsd:integer .
+
+ns:Renta_max a owl:DatatypeProperty ;
+    rdfs:label "Renta Máxima" ;
+    rdfs:domain ns:Viviendas_en_Alquiler ;
+    rdfs:range xsd:integer .
+
+ns:Eurosxm2 a owl:DatatypeProperty ;
+    rdfs:label "Euros por m2" ;
+    rdfs:domain ns:Viviendas_en_Alquiler ;
+    rdfs:range xsd:float .
+
+ns:Desviacion_tipica a owl:DatatypeProperty ;
+    rdfs:label "Desviación Típica" ;
+    rdfs:domain ns:Viviendas_en_Alquiler ;
+    rdfs:range xsd:float .
+

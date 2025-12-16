@@ -1,0 +1,75 @@
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix metro: <https://grupo09.github.io/HandsOn/ontology#> .
+@prefix data:  <https://grupo09.github.io/HandsOn/data/> .
+
+
+
+# Sistema de transporte
+data:sistema/STC_Metro a metro:SistemaTransporte ;
+  metro:nombreSistema "STC Metro" .
+
+
+# Tipos de estación 
+data:tipo/terminal-transbordo a metro:TipoEstacion ;
+  rdfs:label "Terminal / Transbordo"@es .
+
+data:tipo/intermedia a metro:TipoEstacion ;
+  rdfs:label "Intermedia"@es .
+
+
+# Alcaldía 
+data:alcaldia/venustiano-carranza a metro:Alcaldia ;
+  metro:nombreAlcaldia "Venustiano Carranza" .
+
+
+
+# Línea 1 
+data:linea/linea-1 a metro:Linea ;
+  metro:codigoLinea "01" ;
+  metro:perteneceASistema data:sistema/STC_Metro ;
+  metro:tieneEstacion
+      data:estacion/STC0101 ,
+      data:estacion/STC0102 .
+
+
+# Estaciones de ejemplo
+data:estacion/STC0101 a metro:Estacion ;
+  metro:nombreEstacion "Pantitlán" ;
+  metro:numeroEnLinea 1 ;
+  metro:claveEstacion "STC0101" ;
+  metro:anioInauguracion "1984"^^xsd:gYear ;
+  metro:estaEnAlcaldia data:alcaldia/venustiano-carranza ;
+  metro:tieneTipo data:tipo/terminal-transbordo .
+
+data:estacion/STC0102 a metro:Estacion ;
+  metro:nombreEstacion "Zaragoza" ;
+  metro:numeroEnLinea 2 ;
+  metro:claveEstacion "STC0102" ;
+  metro:anioInauguracion "1969"^^xsd:gYear ;
+  metro:estaEnAlcaldia data:alcaldia/venustiano-carranza ;
+  metro:tieneTipo data:tipo/intermedia .
+
+
+
+# Mediciones de afluencia 
+data:afluencia/2010-Abril-linea-1-pantitlan a metro:MedicionAfluencia ;
+  metro:anio "2010"^^xsd:gYear ;
+  metro:mesNombre "Abril" ;
+  metro:afluencia 51040 ;
+  metro:lineaTexto "Linea 1" ;
+  metro:estacionTexto "Pantitlán" ;
+  metro:deLinea data:linea/linea-1 ;
+  metro:deEstacion data:estacion/STC0101 .
+
+data:afluencia/2010-Abril-linea-1-zaragoza a metro:MedicionAfluencia ;
+  metro:anio "2010"^^xsd:gYear ;
+  metro:mesNombre "Abril" ;
+  metro:afluencia 52683 ;
+  metro:lineaTexto "Linea 1" ;
+  metro:estacionTexto "Zaragoza" ;
+  metro:deLinea data:linea/linea-1 ;
+  metro:deEstacion data:estacion/STC0102 .
